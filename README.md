@@ -1,47 +1,121 @@
 # super_trunfo.c
 aula1
+
+
 #include <stdio.h>
 
 int main ()
 {
 
-//usar %s, para caracteres, palavras e letras.
-char UF[2];
-char NF[4];
+    // Declaração das variáveis da Carta 1
+    char UF1 [3];
+    char NF1[10];
+    char DF1[100];
+    int hb1;
+    float km1;
+    float pib1;
+    int pt1;
 
-// usa "fgets" para ler os espaços entre o nome das cidades, quando for usar a variavel.//
-char DF[20]; 
+    // Declaração das variáveis da Carta 2
+    char UF2 [3];
+    char NF2[10];
+    char DF2[100];
+    int hb2;
+    float km2;
+    float pib2;
+    int pt2;
 
-float hb; //habitantes.
+    // ===================== CARTA 1 =====================
+    printf("=== Cadastro da Carta 1 ===\n");
 
-float km; //A área da cidade em quilômetros quadrados.
-float PIB;
+    printf("Estado (UF): ");
+    scanf(" %2s", UF1);
 
-int PT;
+    // N°S, está impondo limite de numeros digitados, impedindo memoria cheia
 
-printf ("Diga a UF do estado:");
-scanf ("%s", UF);
+    printf("NF da Carta (ex: A01): ");
+    scanf(" %9s", NF1);
 
-printf ("Diga a NF (K01 ou K02):");
-scanf ("%s", NF);
+    printf("Cidade: ");
+    scanf(" %99[^\n]", DF1);
 
-printf ("Diga o nome da cidade:");
-scanf ("%s",DF);
-fgets (DF, sizeof(DF), stdin); 
-//fgets suporta mais palavras e espaços.
+    //me permite impor um limite, e ler espaços
 
-printf ("Qual o numero de habitantes da cidade?:");
-scanf ("%f\n", &hb);
-//tentar com %e, Imprime um número de ponto flutuante na notação científica, se não der certo mudar para %f ponto flutuante padrão ou vice versa
+    printf("Populacao: ");
+    scanf("%d", &hb1);
 
-printf ("Qual a kilometragem da cidade?:");
-scanf ("%f\n", &km);
+    printf("Area (km²): ");
+    scanf("%f", &km1);
 
-printf ("Qual o PIB da cidade?:");
-scanf ("%f\n", &PIB);
+    printf("PIB (em bilhoes de reais): ");
+    scanf("%f", &pib1);
 
-printf ("Quantos pontos turisticos há na cidade?:");
-scanf ("%f\n", &PT);
+    printf("Quant. Pontos Turisticos:");
+    scanf("%d", &pt1);
 
+    // ===================== CARTA 2 =====================
+    printf("\n=== Cadastro da Carta 2 ===\n");
 
+    printf("Estado (UF): ");
+    scanf(" %2s", UF2);
+
+    // N°S, está impondo limite de numeros digitados, impedindo memoria cheia
+
+    printf("NF da Carta (ex: B02): ");
+    scanf("%9s", NF2);
+
+    printf("Cidade: ");
+    scanf(" %99[^\n]", DF2);
+    
+    //me permite impor um limite, e ler espaços
+
+    printf("Populacao: ");
+    scanf("%d", &hb2);
+
+    printf("Area (km²): ");
+    scanf("%f", &km2);
+
+    printf("PIB (em bilhoes de reais): ");
+    scanf("%f", &pib2);
+
+    printf("Quant. Pontos Turisticos:");
+    scanf("%d", &pt2);
+
+    // ===================== EXIBIÇÃO DOS DADOS =====================
+    printf("\n\n===== CARTAS CADASTRADAS =====\n");
+
+    printf("\nCarta 1\n");
+
+    printf("Estado: %s\n", UF1);
+
+    printf("Codigo: %s\n", NF1);
+    
+    printf("Nome da Cidade: %s\n", DF1);
+    
+    printf("Populacao: %d\n", hb1);
+    
+    printf("Area: %.2f km²\n", km1);
+    
+    printf("PIB: %.2f bilhoes de reais\n", pib1);
+    
+    printf("Quant. Pontos Turisticos: %d\n", pt1);
+
+    
+    printf("\nCarta 2\n");
+    
+    printf("Estado: %s\n", UF2);
+    
+    printf("Codigo: %s\n", NF2);
+    
+    printf("Cidade: %s\n", DF2);
+    
+    printf("Populacao: %d\n", hb2);
+    
+    printf("Area: %.2f km²\n", km2);
+    
+    printf("PIB: %.2f bilhoes de reais\n", pib2);
+    
+    printf("Quant. Pontos Turisticos:%d\n", pt2);
+
+    return 0;
 }

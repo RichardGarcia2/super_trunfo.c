@@ -6,7 +6,6 @@ aula1
 
 int main ()
 {
-
     // Declaração das variáveis da Carta 1
     char UF1 [3];
     char NF1[10];

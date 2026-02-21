@@ -4,7 +4,8 @@ aula1
 
 #include <stdio.h>
 
-int main ()
+int main() 
+
 {
     // Declaração das variáveis da Carta 1
     char UF1 [3];
@@ -14,7 +15,9 @@ int main ()
     float km1;
     float pib1;
     int pt1;
-
+    float dens_pop;
+    float pib_pcapita;
+    
     // Declaração das variáveis da Carta 2
     char UF2 [3];
     char NF2[10];
@@ -23,6 +26,9 @@ int main ()
     float km2;
     float pib2;
     int pt2;
+    float dens_pop2;
+    float pib_pcapita2;
+
 
     // ===================== CARTA 1 =====================
     printf("=== Cadastro da Carta 1 ===\n");
@@ -80,6 +86,17 @@ int main ()
     printf("Quant. Pontos Turisticos:");
     scanf("%d", &pt2);
 
+
+    //calculo
+
+    dens_pop = hb1/km1;
+
+    dens_pop2 = hb2/km2;
+
+    pib_pcapita = pib1/hb1;
+
+    pib_pcapita2 = pib2/hb2;
+
     // ===================== EXIBIÇÃO DOS DADOS =====================
     printf("\n\n===== CARTAS CADASTRADAS =====\n");
 
@@ -99,6 +116,11 @@ int main ()
     
     printf("Quant. Pontos Turisticos: %d\n", pt1);
 
+    printf("Densidade Populacional: %.2f\n", dens_pop);
+
+    printf("PIB per Capita: %.2f\n", pib_pcapita2);
+
+    //apresentação da carta dois...
     
     printf("\nCarta 2\n");
     
@@ -115,6 +137,10 @@ int main ()
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     
     printf("Quant. Pontos Turisticos:%d\n", pt2);
+
+    printf("Densidade Populacional: %.2f\n", dens_pop2);
+
+    printf("PIB per Capita: %.2f\n", pib_pcapita2);
 
     return 0;
 }
